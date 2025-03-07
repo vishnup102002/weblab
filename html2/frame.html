@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frames Example</title>
+   
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h2 {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+.container {
+    display: flex;
+    height: 400px;
+    border: 2px solid black;
+}
+.nav-frame {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: left;
+}
+.nav-frame a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    text-align: center;
+    background-color: white;
+}
+.nav-frame a:hover {
+    background-color: #ddd;
+}
+.content-frame {
+    width: 80%;
+    border: none;
+}
+.floating-frame {
+    margin: 20px;
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+}
+.mixed-frame-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mixed-frame {
+    width: 45%;
+    height: 250px;
+    margin: 10px;
+    border: 2px solid black;
+}
+</style>
+<body>
+    
+    
+    <h2>Navigation Frame</h2>
+    <div class="container">
+        <div class="nav-frame">
+            <h3>Menu</h3>
+            <a href="https://www.wikipedia.org" target="contentFrame">Wikipedia</a>
+            <a href="https://www.w3schools.com" target="contentFrame">W3Schools</a>
+            <a href="https://www.tutorialspoint.com" target="contentFrame">TutorialsPoint</a>
+        </div>
+        <iframe class="content-frame" name="contentFrame"></iframe>
+    </div>
+
+    
+    <h2>Floating Frame</h2>
+    <iframe class="floating-frame" src="https://tkmce.ac.in/#"></iframe>
+
+  
+    <h2>Mixed Frame</h2>
+    <div class="mixed-frame-container">
+        <iframe class="mixed-frame" src="https://www.wikipedia.org"></iframe>
+        <iframe class="mixed-frame" src="https://tkmce.ac.in/#"></iframe>
+        <iframe class="mixed-frame" src="https://www.w3schools.com"></iframe>
+        <iframe class="mixed-frame" src="https://www.pexels.com"> <!-- Free stock images site -->
+        </iframe>
+    </div>
+
+</body>
+</html>
+
+</body>
+</html>

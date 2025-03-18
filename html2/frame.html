@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frames Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .nav-frame {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        .nav-frame a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+        .nav-frame a:hover {
+            background: #ddd;
+        }
+        .content-frame {
+            width: 80%;
+            border: none;
+        }
+        iframe {
+            width: 90%;
+            height: 250px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Navigation Frame</h2>
+    <div class="container">
+        <div class="nav-frame">
+            <h3>Menu</h3>
+            <a href="https://www.wikipedia.org" target="contentFrame">Wikipedia</a>
+            <a href="https://www.w3schools.com" target="contentFrame">W3Schools</a>
+            <a href="https://www.tutorialspoint.com" target="contentFrame">TutorialsPoint</a>
+        </div>
+        <iframe class="content-frame" name="contentFrame"></iframe>
+    </div>
+
+    <h2>Floating Frame</h2>
+    <iframe src="https://tkmce.ac.in/#"></iframe>
+
+    <h2>Mixed Frames</h2>
+    <iframe src="https://www.wikipedia.org"></iframe>
+    <iframe src="https://www.w3schools.com"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; 
+}
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+

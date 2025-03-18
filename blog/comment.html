@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Page</title>
+    <link rel="stylesheet" href="st.css">
+    <style>
+        
+    </style>
+</head>
+<body class="body">
+    <div style="display: flex; justify-content: center;">
+        <form class="cbox" onsubmit="return validateForm()">
+            <h2 style="text-align: center;">Leave a Comment</h2>
+            <input type="name" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea type="comment" name="comment" rows="4" placeholder="Your Comment" required></textarea>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let comment = document.getElementById('comment').value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let wordCount = comment.split(/\s+/).length;
+
+            if (!name) {
+                alert('Name is required!');
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert('Enter a valid email address!');
+                return false;
+            }
+            if (wordCount < 10 || wordCount > 200) {
+                alert('Comment must be between 10 to 200 words!');
+                return false;
+            }
+
+            alert('Comment submitted successfully!');
+            
+            // Redirect to index.html immediately
+            window.location.href = 'index.html';
+
+            return false; // Prevent actual form submission
+        }
+    </script>
+</body>
+
+    
+</script>
+
+</body>
+</html>

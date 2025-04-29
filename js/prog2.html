@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Button</title>
+    <link rel="stylesheet" href="./prog2.css">
+</head>
+<body>
+    <h1>Click the button to change the background color</h1>
+    <div class="container">
+        <button id="colorButton">Change Background</button>
+        <p id="colorCode">Current Color: #FFFFFF</p>
+    </div>
+    
+    <script>
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A8", "#F1C40F", "#9B59B6", "#1ABC9C", "#E74C3C", "#2ECC71", "#3498DB"];
+        const button = document.getElementById("colorButton");
+        const colorCode = document.getElementById("colorCode");
+
+        button.addEventListener("click", function () {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+            colorCode.textContent = `Current Color: ${randomColor}`;
+            
+            button.style.background = randomColor;
+            button.style.color = "#FFF";
+        });
+    </script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#colorButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#colorButton:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#colorCode {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+</style>

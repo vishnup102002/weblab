@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .content { padding: 20px; border: 2px solid #000; display: inline-block; cursor: pointer; }
+        img { width: 300px; height: auto; display: block; margin: auto; }
+    </style>
+</head>
+<body>
+    <div class="content" id="hoverBox" onmouseover="changeContent()" onmouseout="resetContent()">
+        <h2 id="text">Hover over this text</h2>
+        <img id="image" src="old-image.jpg" alt="Original Image">
+    </div>
+
+    <script>
+        function changeContent() {
+            document.getElementById("text").textContent = "Hello!!";
+            document.getElementById("image").src = "https://plus.unsplash.com/premium_photo-1687203673190-d39c3719123a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVsbG98ZW58MHx8MHx8fDA%3D";
+        }
+        
+        function resetContent() {
+            document.getElementById("text").textContent = "Hover over this text";
+            document.getElementById("image").src = "https://st.depositphotos.com/1032577/4812/i/450/depositphotos_48129893-stock-photo-frame-with-daisies-and-lettering.jpg";
+        }
+    </script>
+</body>
+</html>

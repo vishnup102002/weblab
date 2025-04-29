@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Entry and Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) no-repeat;
+            padding: 30px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add a New Book</h2>
+        <form action="add_book.php" method="post">
+            <div class="form-group">
+                <label>Accession Number:</label>
+                <input type="number" name="accession_number" required>
+            </div>
+            <div class="form-group">
+                <label>Title:</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="form-group">
+                <label>Authors:</label>
+                <input type="text" name="authors" required>
+            </div>
+            <div class="form-group">
+                <label>Edition:</label>
+                <input type="text" name="edition" required>
+            </div>
+            <div class="form-group">
+                <label>Publisher:</label>
+                <input type="text" name="publisher" required>
+            </div>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Search Book by Title</h2>
+        <form action="search_book.php" method="post">
+            <div class="form-group">
+                <label>Enter Title:</label>
+                <input type="text" name="search_title" required>
+            </div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+<script>
+    // Check if "success=1" is in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+        alert("Book added successfully!");
+        // Remove the query param so it doesn't keep showing on refresh
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>
+
+</html>
